@@ -1571,14 +1571,14 @@ header {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  padding: 15px 0 45px;
+  padding: 30px 0 45px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 991px) {
   .header {
-    padding: 7px 0 35px;
+    padding: 16px 0 35px;
   }
 }
 
@@ -1586,13 +1586,17 @@ header {
   display: block;
   width: 167px;
   max-width: 100%;
-  margin: auto;
+  margin: 0 auto 0;
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 991px) {
   .logo {
+    -webkit-transform: translateY(-9px);
+            transform: translateY(-9px);
     width: 135px;
   }
 }
@@ -1615,6 +1619,12 @@ header {
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 991px) {
@@ -1845,12 +1855,12 @@ html[dir="ltr"] .header-setting {
 }
 
 .header-scroll .header {
-  padding: 10px 0 10px;
+  padding: 25px 0 10px;
 }
 
 @media (max-width: 991px) {
   .header-scroll .header {
-    padding: 10px 0;
+    padding: 17px 0 10px;
   }
 }
 
