@@ -1,0 +1,300 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 13;
+    background-color: #fff;
+    @include sm{
+        border-bottom: 1px solid #f2f2f2;
+    }
+}
+
+.header-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $main;
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+
+    span {
+        width: 25px;
+        line-height: 32px;
+        text-align: center;
+        cursor: pointer;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: $main;
+        }
+    }
+}
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 15px 0 45px;
+    transition: all 0.3s ease-in-out;
+
+    @include sm {
+        padding: 7px 0 35px;
+    }
+}
+
+.logo {
+    display: block;
+    width: 167px;
+    max-width: 100%;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+
+    @include sm {
+        width: 135px;
+    }
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header-ico {
+    font-size: 20px;
+    color: $text;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    @include sm {
+        font-size: 24px
+    }
+
+    &:hover,
+    &:focus {
+        color: $main;
+        text-decoration: none;
+    }
+
+    @include rtl {
+        margin-left: 20px;
+
+        &.cart-btn,
+        &.search-btn {
+            margin: 0;
+        }
+    }
+
+    @include ltr {
+        margin-right: 20px;
+
+        &.cart-btn,
+        &.search-btn {
+            margin: 0;
+        }
+    }
+
+    @include sm {
+
+        &.search-btn {
+            display: none;
+        }
+    }
+}
+
+.header-settings {
+    display: flex;
+    align-items: center;
+
+    @include rtl {
+        margin-right: 15px;
+
+        @include md {
+            margin-right: 0px;
+        }
+    }
+
+    @include ltr {
+        margin-left: 15px;
+
+        @include md {
+            margin-left: 0px;
+        }
+    }
+
+    @include sm {
+        display: none;
+    }
+}
+
+.header-setting {
+    position: relative;
+
+    .setting-anchor {
+        display: flex;
+        align-items: center;
+        color: $text;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 55px;
+        cursor: pointer;
+
+        &::after {
+            font-family: 'Linearicons-Free';
+            content: "\e874";
+            font-size: 8px;
+
+            @include rtl {
+                margin-right: 4px;
+            }
+
+            @include ltr {
+                margin-left: 4px;
+            }
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+
+            html[dir='rtl'] & {
+                margin-left: 7px;
+            }
+
+            html[dir='ltr'] & {
+                margin-right: 7px;
+            }
+        }
+    }
+
+    .header-dropDown {
+        position: absolute;
+        top: 100%;
+        background-color: rgba(#17643d, 0.95);
+        min-width: 120px;
+        padding: 9px 13px 3px;
+        z-index: 13;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        visibility: hidden;
+        opacity: 0;
+        margin: 0;
+        transition: all 0.3s ease-in-out;
+
+        &::after {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 6px 6px 6px;
+            border-color: transparent transparent rgba(#17643d, 0.95) transparent;
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        li {
+
+            &:last-of-type {
+                a {
+                    border-bottom: none;
+                    padding-bottom: 0 0;
+                    margin-bottom: 0 0;
+                }
+            }
+        }
+
+        a {
+            white-space: nowrap;
+            border-bottom: 1px solid rgba(#fff, 0.1);
+            font-size: 16px;
+            font-weight: 300;
+            padding: 0 0 8px;
+            margin: 0 0 3px;
+            display: block;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+            background-color: transparent;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                color: #86ceaa;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &:hover {
+        .setting-anchor {
+            color: $main;
+            text-decoration: none;
+        }
+
+        .header-dropDown {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    @include rtl {
+        margin-right: 20px;
+    }
+
+    @include ltr {
+        margin-left: 20px;
+    }
+}
+
+.xs-icons {
+    display: none;
+    align-items: center;
+
+    @include sm {
+        display: flex;
+
+        .search-btn {
+            display: flex;
+
+            @include rtl {
+                margin-left: 0;
+            }
+
+            @include ltr {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.static-header {
+    transition: all 0.3s ease-in-out;
+}
+
+.header-scroll {
+    header {
+        box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+        padding: 10px 0 10px;
+
+        @include sm {
+            padding: 10px 0;
+        }
+    }
+
+    .logo {
+        width: 150px;
+
+        @include sm {
+            width: 120px;
+        }
+    }
+}

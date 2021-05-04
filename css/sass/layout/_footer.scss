@@ -1,0 +1,208 @@
+footer {
+    background-color: $main;
+    margin-top: 180px;
+    padding-top: 60px;
+    padding-bottom: 50px;
+
+    @include sm {
+        margin-top: 70px;
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+}
+
+.foot-head {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 19px;
+}
+
+.foot-nav {
+    margin: 0;
+
+    li {
+        margin-bottom: 8px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        font-size: 16px;
+        font-weight: 300;
+        display: inline-block;
+        color: #86ceaa;
+        transition: all 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            transform: translateX(-5px);
+            color: #fff;
+
+            html[dir='ltr'] & {
+                transform: translateX(5px);
+            }
+        }
+    }
+}
+
+.news-foot-head {
+    margin-bottom: 13px;
+}
+
+.news-subhead {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 400;
+    margin: 0 0 20px;
+}
+
+.newsletter-cont {
+    @include sm {
+        margin-top: 50px;
+        text-align: center;
+    }
+}
+
+.maroof-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+
+    @include sm {
+        margin-top: 35px;
+    }
+}
+
+.last-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    margin-top: 7px;
+
+    @include xs {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+}
+
+.copyrights {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 300;
+
+    @include xs {
+        margin-top: 20px;
+    }
+}
+
+.payments {
+    display: flex;
+    justify-content: flex-end;
+
+    @include xs {
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+
+    @include xs {
+        justify-content: center;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #267d51;
+        font-size: 18px;
+        color: #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            background-color: #fff;
+            color: $main;
+            text-decoration: none;
+        }
+
+        .fa-facebook {
+            &:before {
+                content: "\f39e";
+            }
+        }
+
+        .fa-snapchat {
+            &:before {
+                content: "\f2ac";
+            }
+        }
+
+        @include rtl {
+            ~a {
+                margin-right: 6px;
+            }
+        }
+
+        @include ltr {
+            margin-left: 6px;
+        }
+    }
+}
+
+.arrow-top {
+    position: fixed;
+    bottom: 50px;
+    z-index: 12;
+    display: none;
+
+    @include md {
+        bottom: 10px;
+    }
+
+    @include sm {
+        bottom: 100px;
+    }
+
+    html[dir='rtl'] & {
+        right: 10px;
+    }
+
+    html[dir='ltr'] & {
+        left: 10px;
+    }
+
+    span {
+        font-size: 12px;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: rgba(#000, 0.3);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: $sec;
+        }
+
+        @include sm {
+            margin: auto;
+        }
+    }
+}

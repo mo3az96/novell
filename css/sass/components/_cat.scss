@@ -1,0 +1,58 @@
+.cat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+
+    .cat-img {
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+
+        img {
+            transition: all 0.3s ease-in-out;
+        }
+
+        &::after {
+            border-radius: 50%;
+            content: "";
+            position: absolute;
+            top: 7px;
+            bottom: 7px;
+            left: 7px;
+            right: 7px;
+            border: 1px solid #fff;
+            opacity: 0.5;
+            display: block;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    .cat-name {
+        font-size: 20px;
+        color: $main;
+        font-weight: 600;
+        text-decoration: none;
+        margin-top: 25px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+        text-decoration: none;
+
+        .cat-img {
+            img {
+                transform: scale(1.05);
+            }
+
+            &::after {
+                opacity: 0;
+            }
+        }
+
+        .cat-name {
+            color: $sec;
+        }
+    }
+}

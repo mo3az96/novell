@@ -1,0 +1,22 @@
+@import 'sass/helpers/variables';
+@import 'sass/helpers/mixins';
+@import 'sass/helpers/classes';
+
+@import 'sass/base/reset';
+@import 'sass/base/typography';
+
+@import 'sass/components/search';
+@import 'sass/components/newsletter';
+@import 'sass/components/navbar';
+@import 'sass/components/carousel';
+@import 'sass/components/modal';
+@import 'sass/components/accordion';
+
+@import 'sass/components/cat';
+@import 'sass/components/banners';
+@import 'sass/components/pro';
+
+@import 'sass/layout/header';
+@import 'sass/pages/home';
+@import 'sass/layout/footer';
+@import 'sass/components/xs';

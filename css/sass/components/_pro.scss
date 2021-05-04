@@ -1,0 +1,145 @@
+.product {
+    position: relative;
+
+    .pro-img {
+        display: block;
+        width: 100%;
+        background-color: #fff;
+
+        img {
+            width: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+            img {
+                transform: scale(0.95);
+            }
+        }
+    }
+
+    .info-here {
+        margin-top: 15px;
+    }
+
+    .pro-name {
+        width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding: 5px 0 2px;
+        margin: 0 0 10px;
+
+        @include sm {
+            white-space: unset;
+            text-overflow: unset;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            height: 53px;
+            line-height: 1.333;
+        }
+
+        a {
+            font-size: 16px;
+            color: $text;
+            transition: all 0.3s ease-in-out;
+
+            &:hover,
+            &:focus {
+                color: $sec;
+                text-decoration: none;
+            }
+
+            @include sm {
+                font-size: 15px;
+            }
+        }
+    }
+
+    .tools {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .prices {
+        display: flex;
+        align-items: center;
+
+        @include xs {
+            flex-direction: column;
+        }
+    }
+
+    .current-price {
+        font-size: 16px;
+        color: $main;
+        font-weight: 700;
+    }
+
+    .old-price {
+        font-size: 16px;
+        color: #7f7f7f;
+        text-decoration: line-through;
+
+        @include rtl {
+            margin-right: 7px;
+
+            @include xs {
+                margin-right: 0px;
+            }
+        }
+
+        @include ltr {
+            margin-left: 7px;
+
+            @include xs {
+                margin-left: 0px;
+            }
+        }
+    }
+
+    .addToCart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: $main;
+        color: #fff;
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            background-color: $sec;
+            text-decoration: none;
+        }
+    }
+
+    .pro-label {
+        position: absolute;
+        top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #967145;
+        font-size: 12px;
+        font-weight: 500;
+        background-color: #dfd4c7;
+        width: 37px;
+        height: 37px;
+        border-radius: 50%;
+
+        @include rtl {
+            right: 10px;
+        }
+
+        @include ltr {
+            left: 10px;
+        }
+    }
+}
